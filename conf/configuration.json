@@ -1,0 +1,7 @@
+{
+    "host":"localhost",
+    "typebase":"postgres",
+    "base":"stade",
+    "user":"postgres",
+    "password":"1234"
+}

@@ -1,0 +1,25 @@
+[
+    {
+        "type":"oracle",
+        "version":"xe",
+        "driver":"oracle.jdbc.driver.OracleDriver",
+        "enteteurl":"jdbc:oracle:thin:@",
+        "finurl":":1521:",
+        "forname":"oracle.jdbc.driver.OracleDriver",
+        "date": "alter session set nls_date_format='YYYY-MM-DD'",
+        "pagination":"SELECT * FROM (SELECT ROWNUM as compteur, T.* FROM %s T %s) WHERE compteur BETWEEN ? and ?",
+        "sequence":"select %s.NEXTVAL from dual"
+    },
+    {
+        "type":"postgres",
+        "version":"",
+        "driver":"",
+        "enteteurl":"jdbc:postgresql://",
+        "finurl":"/",
+        "forname":"org.postgresql.Driver",
+        "date": "set datestyle='SQL,YMD'",
+        "pagination":"SELECT * FROM  %s %s  offset ?-1 limit ? ",
+        "sequence":"select NEXTVAL('%s')"
+    }
+    
+]
