@@ -768,8 +768,8 @@ public class BaseDAO{
                 classChamp=champ1.getType();
                 annotationField = champ1.getAnnotation(AnnotationField.class);
                 
-                if(annotationField!=null){
-                    column=annotationField.attribut();
+                //if(annotationField!=null){
+                    column=nomchamp;
                     methodTrouver=null;
                     try{
                         int i=resultSet.findColumn(column);
@@ -795,7 +795,7 @@ public class BaseDAO{
                     catch(NoSuchMethodException | SecurityException  exception){
                         throw exception;
                     }
-                }
+                //}
             }
             cs=cs.getSuperclass();
         }
