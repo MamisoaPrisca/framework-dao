@@ -820,7 +820,6 @@ public class BaseDAO{
             try{
                 ConnectionConf configuration = new ConnectionConf();
                 Class.forName(configuration.getForname());
-                
                 connect=DriverManager.getConnection(configuration.getConnection(),configuration.getUser(),configuration.getPassword());
             }catch(Exception e){
                 try{
@@ -976,7 +975,7 @@ public class BaseDAO{
      * @param page numero de page à effectuer
      * @param nombre nombre de resultat
      * @param object les attributs non null sont les conditions 
-     * @param separateurIsAnd  
+     * @param separateurIsAnd  si false  separateur = or sinon separateur = and
      * @param connection connection à la base de donné
      * @throws  Exception nom de table non specifier ou qui n'existe pas dans la base, objectCondition null, colonne 
      * pas definie dans la table
